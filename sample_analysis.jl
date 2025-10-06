@@ -1,12 +1,13 @@
-# install useful packages 
+# install useful packages (run only once)
 import Pkg 
 Pkg.add("Plots")
 Pkg.add("Revise")
 Pkg.add("LaTeXStrings")
 
 # Install LLT package 
-Pkg.add("https://github.com/mberto79/LLT.git")
+Pkg.add(url="https://github.com/mberto79/LLT.git")
 
+# Tell Julia you want to load the packages you just installed
 using Plots; theme(:ggplot2, linewidth=2)
 using LaTeXStrings
 using Revise
@@ -51,7 +52,6 @@ Cl = lift_coefficient(A, AR)
 Cd = drag_coefficient(Cl, AR, E)
 
 # Post-processing results
-
 plot(
     y, G0/maximum(G0), label="Circulation", legend=false,
     xlabel="Spanwise coordinate [m]", ylabel=L"\Gamma/\Gamma_0")
