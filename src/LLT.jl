@@ -1,5 +1,5 @@
 module LLT
 
-greet() = print("Hello World!")
+include("function_definitions.jl")
 
 end # module LLT
